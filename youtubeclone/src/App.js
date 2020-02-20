@@ -1,34 +1,28 @@
-import React from 'react';
-import { Grid } from '@material-ui/core';
-import youtube from './api/youtube';
+import React from "react";
+import { Grid } from "@material-ui/core";
+import youtube from "./api/youtube";
+import { SearchBar, VideoDetail } from "./components"; // DRY code
 
-
-
-class App extends React.Component{
-    render(){
-        return(
-            <Grid justify="center" container spacing={16}>
-                <Grid item x5={12}>
-                    <Grid container spacing={16}>
-                        <Grid item x5={12}>
-                            {/* SEARCH BAR */}
-                        </Grid>
-                        <Grid item x5={8}>
-                        {/* VIDEO DETAIL */}
-                        </Grid>
-                        <Grid item x5={4}>
-                            {/* VIDEO LIST */}
-                        </Grid>
-
-                    </Grid>
-
-                </Grid>
-
+class App extends React.Component {
+  render() {
+    return (
+      <Grid style={{justify:"center"}} container spacing={16}>
+        <Grid item xs={11}>
+          <Grid container spacing={10}>
+            <Grid item xs={12}>
+              <SearchBar />
             </Grid>
-        )
-    }
+            <Grid item xs={8}>
+              <VideoDetail />
+            </Grid>
+            <Grid item xs={4}>
+              {/* VIDEO LIST */}
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    );
+  }
 }
-
-
 
 export default App;

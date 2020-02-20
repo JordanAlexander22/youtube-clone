@@ -3,7 +3,7 @@ import {Paper, Typography} from '@material-ui/core'
 
 const VideoDetail = ({video}) => {
     if(!video) return <div>Loading..</div>
-    console.log(video.id.videoId);
+    console.log(video);
     const videosrc= `https://www.youtube.com/embed/${video.id.videoId}`
 
     return (
@@ -12,7 +12,9 @@ const VideoDetail = ({video}) => {
                 <iframe frameBorder='0' height= '100%' width='100%' title="video player" src={videosrc}/>
             </Paper>
             <Paper elevation = {6} style={{padding: '1rem'}}>
-
+                <Typography> </Typography>
+                <Typography> </Typography>
+                <Typography> </Typography>
             </Paper>
         </React.Fragment>
     )

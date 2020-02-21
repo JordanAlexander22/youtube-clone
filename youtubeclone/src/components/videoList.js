@@ -5,7 +5,7 @@ import VideoItem from "./videoItem";
 
 //mapping through array of videos 
 const VideoList = ({ videos }) => {
-  const listOfVideos = videos.map(video => <VideoItem />);
+  const listOfVideos = videos.map((video, id) => <VideoItem key={id} video={video} />);
   return listOfVideos;
 };
 

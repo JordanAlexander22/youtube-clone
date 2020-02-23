@@ -8,6 +8,15 @@ class App extends React.Component {
     videos: [],
     selectedVideo: null,
   }
+
+  componentDidMount(){
+    this.handleSubmit('best web frameworks of 2020')  // implented lifecycle method so that screen is never blanke and always something is running
+  }
+
+  onVideoSelect = (video) => {
+    this.setState({selectedVideo: video})
+  }
+
   handleSubmit = async (searchTerm) => {
     const response = await youtube.get("search", {
       params: {
@@ -34,7 +43,7 @@ class App extends React.Component {
               <VideoDetail video={selectedVideo} />
             </Grid>
             <Grid item xs={4}>
-               < VideoList videos={videos} />
+               < VideoList videos={videos} onSelectVideo= {this.onVideoSelect} />
             </Grid>
           </Grid>
         </Grid>

@@ -14,7 +14,7 @@ class App extends React.Component {
   }
 
   onVideoSelect = (video) => {
-    this.setState({selectedVideo: video})
+    this.setState({selectedVideo: video});
   }
 
   handleSubmit = async (searchTerm) => {
@@ -43,7 +43,7 @@ class App extends React.Component {
               <VideoDetail video={selectedVideo} />
             </Grid>
             <Grid item xs={4}>
-               < VideoList videos={videos} onSelectVideo= {this.onVideoSelect} />
+               < VideoList videos={videos} onVideoSelect= {this.onVideoSelect} />
             </Grid>
           </Grid>
         </Grid>

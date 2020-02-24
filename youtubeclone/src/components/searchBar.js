@@ -1,32 +1,31 @@
 import React from "react";
-
-import { Paper, TextField } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
 
 // using class component here because state will be managed in this component
 class SearchBar extends React.Component {
   state = {
-    searchTerm: '',
+    searchTerm: ""
   };
 
-  handleChange = (e) => this.setState({ searchTerm: e.target.value });
+  handleChange = e => this.setState({ searchTerm: e.target.value });
   //one line arrow function written because arrow functions do not have their own 'this' so we avoid binding
 
-  handleSubmit = (e) => {
-    const {searchTerm}= this.state; //destructuring
-    const {onFormSubmit}=this.props;
+  handleSubmit = e => {
+    const { searchTerm } = this.state; //destructuring
+    const { onFormSubmit } = this.props;
 
     onFormSubmit(searchTerm);
 
     e.preventDefault();
-  }
+  };
 
   render() {
     return (
-      <Paper elevation={6} style={{ padding: "1.5rem" }}>
+      <div className="search-bar ui segment">
         <form onSubmit={this.handleSubmit}>
-          <TextField fullWidth label="Search" onChange={this.handleChange} />
+        <TextField fullWidth label="Search" onChange={this.handleChange} />
         </form>
-      </Paper>
+      </div>
     );
   }
 }

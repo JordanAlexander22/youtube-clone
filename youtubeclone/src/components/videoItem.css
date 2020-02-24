@@ -1,0 +1,17 @@
+.video-item.item img {
+    max-width: 180px;
+}
+
+.video-item {
+    display: flex !important;
+    align-items: center !important;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+h4 {
+    padding: 1rem;
+}
+body{
+    background-color: #f2d0d6;
+}

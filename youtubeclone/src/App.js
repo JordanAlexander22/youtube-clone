@@ -3,6 +3,7 @@ import React from "react";
 import youtube from "./api/youtube";
 import { SearchBar, VideoDetail, VideoList } from "./components"; // DRY code
 
+
 class App extends React.Component {
   state = {
     videos: [],

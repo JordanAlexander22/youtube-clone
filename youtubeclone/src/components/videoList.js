@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+//import { Grid } from "@material-ui/core";
 import VideoItem from "./videoItem";
 
 
@@ -7,9 +7,9 @@ import VideoItem from "./videoItem";
 const VideoList = ({ videos, onVideoSelect }) => {
   const listOfVideos = videos.map((video, id) => <VideoItem onVideoSelect= {onVideoSelect} key={id} video={video} />);
   return (
-    <Grid container spacing={10}>
-    {listOfVideos}
-    </Grid>
+    <div className='ui relaxed divided list' style={{cursor: "pointer"}}>
+    <strong>{listOfVideos}</strong>
+    </div>
   )
 };
 
